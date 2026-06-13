@@ -2,11 +2,12 @@ import type { AssessmentResult, SystemProfile } from "../types/assessment";
 import { getImpactLabel } from "../utils/scoring";
 
 type Props = {
-    profile: SystemProfile;
-    result: AssessmentResult | null;
+  profile: SystemProfile;
+  result: AssessmentResult | null;
+  onSaveAssessment?: () => void;
 };
 
-function ReportPreview({ profile, result }: Props) {
+function ReportPreview({ profile, result, onSaveAssessment }: Props) {
     const handlePrint = () => {
         window.print();
     };
@@ -243,6 +244,12 @@ function ReportPreview({ profile, result }: Props) {
                 <button className="ghost-button" onClick={exportJSON}>
                     Export Assessment JSON
                 </button>
+
+                {onSaveAssessment && (
+                    <button className="secondary-button" onClick={onSaveAssessment}>
+                        Save Assessment
+                    </button>
+                )}
             </div>
         </section>
     );

@@ -39,8 +39,12 @@ function App() {
     setSavedAssessments(getSavedAssessments());
   }, []);
 
+  const refreshSavedAssessments = () => {
+    setSavedAssessments(getSavedAssessments());
+  };
+
   const runAssessment = () => {
-    if (!profile.systemName || !profile.sector || !profile.purpose) {
+    if (!profile.systemName.trim() || !profile.sector || !profile.purpose.trim()) {
       alert(
         "Please complete the system name, sector, and purpose before running the assessment."
       );
@@ -65,7 +69,7 @@ function App() {
     };
 
     saveAssessment(savedAssessment);
-    setSavedAssessments(getSavedAssessments());
+    refreshSavedAssessments();
 
     alert("Assessment saved successfully.");
   };
@@ -83,7 +87,7 @@ function App() {
     if (!confirmed) return;
 
     deleteAssessment(id);
-    setSavedAssessments(getSavedAssessments());
+    refreshSavedAssessments();
   };
 
   const loadLabReportExample = () => {
@@ -148,7 +152,11 @@ function App() {
 
       <ResultsPanel result={result} />
 
-      <ReportPreview profile={profile} result={result} />
+      <ReportPreview
+        profile={profile}
+        result={result}
+        onSaveAssessment={handleSaveAssessment}
+      />
 
       <AssessmentHistory
         savedAssessments={savedAssessments}

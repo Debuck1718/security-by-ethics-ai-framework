@@ -841,3 +841,420 @@ select:focus {
     align-items: flex-start;
   }
 }
+
+/* Professional PDF / Print Layout */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .hero,
+  .action-row,
+  .assessment-action,
+  .panel:not(.report-panel),
+  .report-actions {
+    display: none !important;
+  }
+
+  .app-shell {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .report-panel {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .report-panel .section-heading {
+    margin-bottom: 16px !important;
+  }
+
+  .report-panel .section-heading span {
+    color: #6d28d9 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.8px;
+  }
+
+  .report-panel .section-heading h2 {
+    color: #111827 !important;
+    font-size: 24px !important;
+    margin: 4px 0 !important;
+  }
+
+  .report-panel .section-heading p {
+    color: #4b5563 !important;
+    font-size: 12px !important;
+  }
+
+  .report-box {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 10px !important;
+    padding: 18px !important;
+    margin: 0 !important;
+  }
+
+  .report-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .report-header h3 {
+    color: #111827 !important;
+    font-size: 18px !important;
+    margin: 0 0 4px !important;
+  }
+
+  .report-subtitle {
+    color: #4b5563 !important;
+    font-size: 12px !important;
+  }
+
+  .risk-badge {
+    border: 1px solid #d1d5db !important;
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+    padding: 5px 9px !important;
+    font-size: 11px !important;
+  }
+
+  .report-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px 18px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .report-grid p {
+    color: #111827 !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+  }
+
+  .report-grid strong,
+  .report-box strong {
+    color: #111827 !important;
+  }
+
+  .report-box hr {
+    border: none !important;
+    border-top: 1px solid #9ca3af !important;
+    margin: 12px 0 16px !important;
+  }
+
+  .report-box h4 {
+    color: #111827 !important;
+    font-size: 14px !important;
+    margin: 16px 0 8px !important;
+    page-break-after: avoid;
+  }
+
+  .report-summary-card,
+  .report-risk-item,
+  .risk-guide-item {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .report-summary-card p,
+  .report-risk-item p,
+  .risk-guide-item p {
+    color: #111827 !important;
+    margin: 0 0 6px !important;
+    font-size: 12px !important;
+  }
+
+  .risk-guide {
+    display: grid !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .risk-guide-item strong {
+    color: #111827 !important;
+    font-size: 12px !important;
+  }
+
+  .risk-guide-item.low {
+    border-left: 4px solid #22c55e !important;
+  }
+
+  .risk-guide-item.moderate {
+    border-left: 4px solid #f59e0b !important;
+  }
+
+  .risk-guide-item.high {
+    border-left: 4px solid #f97316 !important;
+  }
+
+  .risk-guide-item.critical {
+    border-left: 4px solid #ef4444 !important;
+  }
+
+  .report-table {
+    display: grid !important;
+    gap: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .report-table div {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 6px 0 !important;
+    color: #111827 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .report-table strong,
+  .report-table span {
+    color: #111827 !important;
+    font-size: 12px !important;
+  }
+
+  .report-box ol,
+  .report-box ul {
+    margin: 6px 0 12px 18px !important;
+    padding: 0 !important;
+  }
+
+  .report-box li {
+    color: #111827 !important;
+    margin-bottom: 5px !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+
+  .report-risk-list {
+    display: grid !important;
+    gap: 8px !important;
+  }
+
+  .report-risk-item {
+    margin-bottom: 6px !important;
+  }
+
+  .methodology,
+  .disclaimer {
+    color: #4b5563 !important;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+  }
+
+  .disclaimer {
+    border-top: 1px solid #e5e7eb !important;
+    padding-top: 8px !important;
+    margin-top: 12px !important;
+  }
+
+  .full-width {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* Compact Professional Print Refinement */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    font-size: 10.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .report-panel .section-heading {
+    margin-bottom: 10px !important;
+  }
+
+  .report-panel .section-heading span {
+    font-size: 9px !important;
+  }
+
+  .report-panel .section-heading h2 {
+    font-size: 20px !important;
+    margin: 2px 0 !important;
+  }
+
+  .report-panel .section-heading p {
+    font-size: 10px !important;
+  }
+
+  .report-box {
+    padding: 14px !important;
+    border-radius: 8px !important;
+  }
+
+  .report-header {
+    margin-bottom: 10px !important;
+  }
+
+  .report-header h3 {
+    font-size: 15px !important;
+  }
+
+  .report-subtitle {
+    font-size: 10px !important;
+  }
+
+  .risk-badge {
+    font-size: 9px !important;
+    padding: 4px 7px !important;
+  }
+
+  .report-grid {
+    gap: 5px 14px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .report-grid p,
+  .report-summary-card p,
+  .report-risk-item p,
+  .risk-guide-item p,
+  .report-table strong,
+  .report-table span {
+    font-size: 10px !important;
+  }
+
+  .report-box hr {
+    margin: 8px 0 10px !important;
+  }
+
+  .report-box h4 {
+    font-size: 12px !important;
+    margin: 12px 0 6px !important;
+  }
+
+  .report-summary-card,
+  .report-risk-item,
+  .risk-guide-item {
+    padding: 8px !important;
+    border-radius: 7px !important;
+  }
+
+  .risk-guide {
+    gap: 6px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .risk-guide-item {
+    gap: 2px !important;
+  }
+
+  .risk-guide-item strong {
+    font-size: 10px !important;
+  }
+
+  .report-table div {
+    padding: 4px 0 !important;
+  }
+
+  .report-box ol,
+  .report-box ul {
+    margin: 4px 0 8px 16px !important;
+  }
+
+  .report-box li {
+    font-size: 10px !important;
+    margin-bottom: 3px !important;
+    line-height: 1.35 !important;
+  }
+
+  .report-risk-list {
+    gap: 6px !important;
+  }
+
+  .report-risk-item {
+    margin-bottom: 4px !important;
+  }
+
+  .disclaimer {
+    font-size: 9.5px !important;
+    margin-top: 8px !important;
+    padding-top: 6px !important;
+  }
+}
+/* Final Print Page-Break Refinement */
+
+@media print {
+  .report-table {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .report-table div {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .report-box h4 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .report-summary-card,
+  .risk-guide,
+  .report-risk-list {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .report-risk-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+@media print {
+  .risk-guide-item {
+    padding: 6px 8px !important;
+  }
+
+  .risk-guide-item p {
+    line-height: 1.25 !important;
+  }
+
+  .report-summary-card {
+    padding: 7px 8px !important;
+  }
+
+  .report-box h4 {
+    margin: 9px 0 5px !important;
+  }
+}
